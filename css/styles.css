@@ -1,0 +1,382 @@
+:root {
+    --color-primary: #5b88b2;
+    --color-secondary: #f9f9f9;
+    --color-text: #ffffff;
+    --color-text-secondary: #333333;
+}
+/* Estilos generales para celular */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    /* resto de tus estilos... */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--color-primary) 1%, var(--color-secondary) 100%);
+    z-index: -1;
+}
+
+/* Contenedores para celular */
+.login-container{
+    border-radius: 0; /* Sin bordes redondeados en celular */
+    box-shadow: none; /* Sin sombra en celular */
+    width: 100%;
+    max-width: none; /* Ocupa todo el ancho en celular */
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    margin-top: 0; /* Sin margen superior en celular */
+}
+.signup-container{
+    border-radius: 0; /* Sin bordes redondeados en celular */
+    box-shadow: none; /* Sin sombra en celular */
+    width: 100%;
+    max-width: none; /* Ocupa todo el ancho en celular */
+    padding: 20px 20px;
+    text-align: center;
+    position: relative;
+    margin-top: 0; /* Sin margen superior en celular */
+}
+
+
+
+/* Logo para celular */
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: white;
+    margin: 0px auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Ajustar tamaño de fuente para celular si es necesario */
+    /* Sin sombra en celular */
+    border: 5px solid white;
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tipografía para celular */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Botón de volver para celular */
+.back-button {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--color-primary);
+    font-size: 18px; /* Ajustar tamaño de fuente para celular si es necesario */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.back-button:hover {
+    color: var(--color-primary);
+}
+
+.back-button:active {
+    color: #4285f4; /* Un tono ligeramente más oscuro del azul primario */
+    transform: scale(0.95); /* Efecto de pulsación */
+    
+}
+/* Selector de tipo de usuario (solo para signup) para celular */
+.user-type-selector {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.user-type {
+    flex: 1;
+    padding: 10px; /* Ajustar padding para celular */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px; /* Ajustar tamaño de fuente para celular */
+
+}
+
+.user-type.active {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+}
+
+/* Grupos de entrada para celular */
+.input-group {
+    margin-bottom: 15px; /* Reducir margen para celular */
+    position: relative;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px; /* Reducir margen para celular */
+    color: #555;
+    font-weight: bold;
+    font-size: 14px; /* Ajustar tamaño de fuente para celular */
+}
+
+input {
+    width: 100%;
+    padding: 12px; /* Reducir padding para celular */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px; /* Ajustar tamaño de fuente para celular */
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color:  var(--color-primary);
+    outline: none;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px; /* Ajustar posición para celular */
+    top: 60%; /* Ajustar posición para celular */
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+    font-size: 16px; /* Ajustar tamaño de icono para celular */
+}
+
+/* Subida de archivos (solo para signup) para celular */
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0; /* Reducir margen para celular */
+}
+
+.file-upload-preview {
+    width: 80px; /* Reducir tamaño para celular */
+    height: 80px; /* Reducir tamaño para celular */
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    margin-bottom: 10px; /* Reducir margen para celular */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ccc;
+}
+
+.file-upload-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+.file-upload-label {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 8px 12px; /* Reducir padding para celular */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px; /* Ajustar tamaño de fuente para celular */
+}
+
+.file-upload-label:hover {
+    background-color: var(--color-primary);
+}
+
+.file-upload-input {
+    display: none;
+}
+
+/* Botones para celular */
+.btn, .login-btn, .signup-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px; /* Reducir padding para celular */
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px; /* Ajustar tamaño de fuente para celular */
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px; /* Reducir margen para celular */
+    transition: background-color 0.3s;
+}
+
+.btn:hover, .login-btn:hover, .signup-btn:hover {
+    background-color: var(--color-primary);
+}
+
+.btn:active, .login-btn:active, .signup-btn:active {
+    background-color: #4285f4; /* Un tono ligeramente más oscuro del azul primario */
+    color: #ffffff; /* Cambiar el color del texto al hacer clic */
+    transform: scale(0.98); /* Efecto de pulsación */
+    box-shadow: #4fa6f3 0px 0px 5px; /* Añadir sombra al hacer clic */
+    
+}
+
+/* Enlace crear cuenta (solo para login) para celular */
+.create-account {
+    display: block;
+    margin-top: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s, background-color 0.3s; /* Añadir transición para el fondo */
+    padding: 5px 0; /* Añadir un poco de padding vertical */
+    border-radius: 3px; /* Opcional: añadir un pequeño radio de borde */
+}
+
+.create-account:hover {
+    color: #4fa6f3; /* Un tono ligeramente más oscuro del azul primario */
+    text-decoration: none; /* O puedes dejar el subrayado si lo prefieres */
+    
+}
+.create-account:active {
+    color: #ffffff; /* Cambiar el color del texto al hacer clic */
+    transform: scale(0.95); /* Efecto de pulsación */
+   
+}
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group.error input {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -1.2rem;
+    left: 0;
+}
+
+.file-upload {
+    margin-bottom: 1.5rem;
+}
+
+
+/* Media query para ordenador (pantallas con un ancho mínimo de 481px) */
+@media (min-width: 481px) {
+    body {
+        padding: 80px; /* Aumentar padding para ordenador */
+    }
+
+    .login-container, .signup-container {
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        padding: 30px;
+        margin-top: 50px;
+        margin: 0 auto; /* Centrar el contenedor en la pantalla */
+    }
+
+    .login-container {
+        max-width: 400px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-circle {
+        width: 150px;
+        height: 150px;
+        margin: -70px auto 20px;
+        font-size: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .back-button {
+        left: 20px;
+        top: 20px;
+        font-size: 20px;
+    }
+
+    .user-type-selector {
+        margin-bottom: 25px;
+    }
+
+    .user-type {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    input {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .password-toggle {
+        right: 15px;
+        top: 65%;
+        font-size: 18px;
+    }
+
+    .file-upload {
+        margin: 20px 0;
+    }
+
+    .file-upload-preview {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+
+    .file-upload-label {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .btn, .login-btn, .signup-btn {
+        padding: 15px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .create-account {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    /* Estilos para errores de validación */
+   
+}
+

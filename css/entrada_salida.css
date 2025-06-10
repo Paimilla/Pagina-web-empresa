@@ -1,0 +1,143 @@
+
+        /* Asegúrate que los estilos base de styleIndex.css se apliquen */
+        /* Estilos adicionales para el contenedor del formulario si son necesarios */
+        .form-container {
+            position: relative; /* <-- AÑADE ESTA LÍNEA */
+            max-width: 700px; /* Ancho máximo del formulario */
+            margin: 2rem auto; /* Centrado con margen superior/inferior */
+            padding: 2.5rem; /* Espaciado interno */
+            background-color: #ffffff; /* Fondo blanco para destacar */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        /* ... (el resto de tus estilos) ... */
+
+        .back-button {
+            position: absolute;
+            left: 15px;  /* Ahora 15px desde el borde izquierdo del form-container */
+            top: 15px;   /* Ahora 15px desde el borde superior del form-container */
+            color: #333;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10; /* Opcional: Asegura que esté por encima de otros elementos si hay solapamiento */
+            transition: color 0.3s;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem; /* Espacio debajo del título */
+            color: var(--color-primary, #337ab7); /* Usa variable CSS si está definida, si no, un azul */
+            font-weight: bold;
+        }
+
+
+        /* --- CSS MODIFICADO PARA SWITCH MÁS GRANDE --- */
+
+        /* Contenedor principal del switch */
+        .custom-switch {
+            display: flex; /* Flexbox para alinear elementos */
+            align-items: center; /* Centrar verticalmente */
+            margin-bottom: 1rem; /* Espacio inferior */
+            padding-left: 0; /* Eliminar padding izquierdo */
+        }
+
+        /* Estilo base del Label (Texto) */
+        .custom-switch .custom-control-label {
+            margin-bottom: 0; /* Eliminar margen inferior */
+            font-size: 1.2rem; /* Tamaño de fuente aumentado */
+            font-weight: normal; /* Peso de fuente normal */
+            color: var(--color-primary); /* Color del texto */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            margin-left: 60px;
+        }
+
+        /* Fondo/Riel del Switch (::before) - Ligeramente más grande */
+        .custom-switch .custom-control-label::before {
+            position: absolute;
+            top: 50%; /* Centrar verticalmente */
+            transform: translateY(-50%); /* Ajuste fino vertical */
+            left: 0;
+            display: block;
+            width: 3.25rem;  /* Ancho aumentado */
+            height: 1.8rem; /* Alto aumentado */
+            content: "";
+            background-color: #e9ecef; /* Color de fondo inactivo */
+            border: 1px solid #adb5bd; /* Borde inactivo */
+            border-radius: 0.9rem; /* Radio para hacerlo redondeado (alto / 2) */
+            transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            pointer-events: none; /* El clic debe pasar al label */
+        }
+
+        /* Círculo/Manija del Switch (::after) - Ligeramente más grande */
+        .custom-switch .custom-control-label::after {
+            position: absolute;
+            /* Posición inicial (ajustada al nuevo tamaño) */
+            top: calc(50% - (1.5rem / 2)); /* Centrar verticalmente (basado en nueva altura) */
+            left: 3px; /* Pequeño espacio desde el borde izquierdo */
+            display: block;
+            width: 1.5rem;  /* Ancho aumentado del círculo */
+            height: 1.5rem; /* Alto aumentado del círculo */
+            content: "";
+            background-color: #fff; /* Color del círculo */
+            border: 1px solid #adb5bd; /* Borde del círculo */
+            border-radius: 50%; /* Hacerlo perfectamente redondo */
+            transition: transform .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        /* Estado Activo: Mover el Círculo (::after) */
+        .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+            background-color: #fff;
+            /* Ajustar distancia de traslación basada en nuevos tamaños */
+            /* (width_before - width_after - left_offset_initial) aprox */
+            transform: translateX(1.6rem);
+            border-color: var(--color-primary, #28a745); /* Borde activo */
+        }
+
+        /* Estado Activo: Cambiar color del Fondo (::before) */
+        .custom-switch .custom-control-input:checked ~ .custom-control-label::before {
+            color: #fff;
+            border-color: var(--color-primary, #28a745);
+            background-color: var(--color-primary, #28a745);
+        }
+
+        /* Estilos de Foco (opcional pero recomendado para accesibilidad) */
+        .custom-switch .custom-control-input:focus ~ .custom-control-label::before {
+            /* Ejemplo: Sombra al enfocar con teclado */
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+        }
+
+        .custom-switch .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+            border-color: #80bdff; /* Borde diferente al enfocar si no está activo */
+        }
+
+        /* Desactivado (opcional) */
+        .custom-switch .custom-control-input:disabled ~ .custom-control-label {
+            color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .custom-switch .custom-control-input:disabled ~ .custom-control-label::before {
+            background-color: #e9ecef;
+            opacity: 0.7;
+        }
+
+
+        /* Estilo para mostrar la hora automática */
+        .hora-automatica {
+            font-style: italic;
+            color: #6c757d; /* Color gris de Bootstrap */
+        }
+
+        .btn-ingresar {
+             background-color: var(--color-primary, #007bff);
+             border-color: var(--color-primary, #007bff);
+             padding: 0.75rem;
+             font-size: 1.1rem;
+             font-weight: bold;
+        }
+        .btn-ingresar:hover {
+            opacity: 0.9;
+        }
+
+        

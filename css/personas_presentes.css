@@ -1,0 +1,317 @@
+/* Estilos específicos para el reporte de personas presentes */
+.reporte-container {
+    padding: 15px;
+}
+
+.reporte-titulo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Resumen de asistencia */
+.resumen-asistencia {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resumen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.resumen-header h3 {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.resumen-fecha {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.calendar-icon {
+    margin-left: 10px;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.resumen-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.estadistica-item {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.estadistica-icono {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.estadistica-valor {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.estadistica-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Lista de empleados */
+.lista-empleados {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.empleado-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.empleado-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.empleado-foto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+.empleado-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.empleado-datos {
+    flex-grow: 1;
+}
+
+.empleado-nombre {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.empleado-departamento {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.empleado-tiempo {
+    display: flex;
+    align-items: center;
+}
+
+.tiempo-ticket {
+    margin-right: 10px;
+}
+
+.ticket-icon {
+    font-size: 1.5rem;
+    color: var(--color-success);
+}
+
+.tiempo-detalle {
+    text-align: right;
+}
+
+.tiempo-label {
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.tiempo-valor {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Modal de fecha */
+.modal-fecha {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+}
+
+.modal-cerrar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px 15px;
+}
+
+.fecha-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.modal-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.secundario {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.primario {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: white;
+}
+
+/* Versión tablet */
+@media (min-width: 768px) {
+    .reporte-container {
+        padding: 20px;
+        
+    }
+    
+    .lista-empleados {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .empleado-card {
+        padding: 15px;
+    }
+}
+
+/* Versión desktop */
+@media (min-width: 992px) {
+    
+    .calendar-icon {
+        margin-left: 10px;
+        color: var(--color-primary);
+        cursor: pointer;
+    }
+    
+
+    .resumen-estadisticas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .estadistica-item {
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .estadistica-icono {
+        font-size: 1.6rem;
+        color: var(--color-primary);
+        margin-bottom: 5px;
+    }
+
+    .estadistica-valor {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--color-primary);
+        margin-bottom: 5px;
+    }
+
+    .estadistica-label {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    
+    
+    
+    .lista-empleados {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .resumen-estadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
